@@ -25,5 +25,13 @@ class DatabaseSeeder extends Seeder
             'email' => 'guest@guest.guest',
             'role' => 'guest',
         ]);
+
+        $this->call([
+            ActivitySeeder::class,
+            SlotSeeder::class,
+            CourseSeeder::class,
+        ]);
+        
     }
+   
 }

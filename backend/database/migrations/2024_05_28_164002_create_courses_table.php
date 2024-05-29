@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('location');
+            $table->foreignId('activity_id')->constrained()->onDelete('cascade');
+            $table->foreignId('slot_id')->constrained()->onDelete('cascade');
         });
     }
 
