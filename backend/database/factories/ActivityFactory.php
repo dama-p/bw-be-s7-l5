@@ -16,6 +16,7 @@ class ActivityFactory extends Factory
      */
     public function definition(): array
     {
+        //il fake() è un nuovo metodo laravel e sostituisce il $this->faker() che trovi su slot
         return [
             'name' => fake()->name(),
             'description' => fake()->words(rand(4,10), true)

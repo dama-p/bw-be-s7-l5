@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Slot;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class SlotSeeder extends Seeder
 {
@@ -12,6 +13,6 @@ class SlotSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Slot::factory(5)->create();
     }
 }

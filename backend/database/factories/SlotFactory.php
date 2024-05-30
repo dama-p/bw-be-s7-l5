@@ -16,8 +16,16 @@ class SlotFactory extends Factory
      */
     public function definition(): array
     {
+        $days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
         return [
-            //
+            // Seleziona un giorno casuale dall'array
+            'day' => $days[array_rand($days)],
+              // Genera un'ora di inizio casuale
+              'start' => $this->faker->time($format = 'H:i:s', $max = 'now'),
+              // Genera un'ora di fine casuale
+              'end' => $this->faker->time($format = 'H:i:s', $max = 'now'),
         ];
-    }
+
+}
 }

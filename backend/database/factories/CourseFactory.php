@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Slot;
+use App\Models\Activity;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +18,18 @@ class CourseFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            //
-        ];
+        $rooms = ['Room-A', 'Room-B', 'Room-C', 'Room-D'];
+        $slot_ids = Slot::all()->pluck('id')->all();
+        $activities_ids = Activity::all()->pluck('id')->all();
+        
+    return [
+
+        'activity_id' =>fake()->randomElement($activities_ids),
+        'slot_id' => fake()->randomElement($slot_ids),
+        'location' => fake()->randomElement($rooms),
+
+    ];
+
+
     }
 }
